@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Fundraise Campaigns</title>
+    <style>
+        .fundraise-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Fundraise Campaigns</h1>
+    <a href="index.html">Go Back to Home</a>
+
+    <div class="fundraise-cards" id="fundraiseContainer">
+        <!-- Fundraises will be displayed here -->
+    </div>
+
+    <script>
+        // Fetch the fundraise data
+        fetch("GetAllFundrasie")
+            .then(response => response.json())
+            .then(data => {
+                displayFundraises(data);
+            })
+            .catch(error => {
+                console.error("Error fetching fundraise data:", error);
+            });
+
+        // Display the fundraise data
+        function displayFundraises(fundraises) {
+            let fundraiseContainer = document.getElementById("fundraiseContainer");
+            fundraiseContainer.innerHTML = "";
+
+            fundraises.forEach(fundraise => {
+                let fundraiseCard = document.createElement("div");
+                fundraiseCard.className = "fundraise-card";
+
+                let title = document.createElement("h2");
+                title.textContent = fundraise.title;
+
+                let cause = document.createElement("p");
+                cause.textContent = "Cause: " + fundraise.cause;
+
+                fundraiseCard.appendChild(title);
+                fundraiseCard.appendChild(cause);
+
+                fundraiseContainer.appendChild(fundraiseCard);
+            });
+        }
+    </script>
+</body>
+</html>
