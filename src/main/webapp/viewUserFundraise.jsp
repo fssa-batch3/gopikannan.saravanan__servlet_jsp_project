@@ -15,6 +15,7 @@
 	margin: 10px;
 	max-width: 300px;
 	height: auto;
+	 background-color: white;
 }
 
 .fundraise-card h2 {
@@ -27,6 +28,9 @@
 	display: block;
 	margin: auto;
 }
+h1,h3{
+ text-align: center;
+ margin-top:10px;}
 
 #fundraiseContainer {
 	display: flex;
@@ -52,13 +56,13 @@ font-size:18px;
 					out.println("<p id='success'>" + successMessage + "</p>");
 				}
 				%>
-	<a href="home.jsp">Go Back to Home</a>
 
 	<div class="fundraise-cards" id="fundraiseContainer">
 		<c:forEach var="fundraise" items="${requestScope.FUNDRAISE}">
 			<div class="fundraise-card">
 				<h2>${fundraise.title}</h2>
 				<p>Cause: ${fundraise.cause}</p>
+				<p>Expected Amount : ${fundraise.expectedAmount}
 				<img id="coverpic" src="<c:url value='${fundraise.coverPic}'/>"
 					alt="Fundraise Cover"> <a
 					href="UpdateFundraiseServlet?fundraiseId=${fundraise.fundraiseid}">Edit</a>

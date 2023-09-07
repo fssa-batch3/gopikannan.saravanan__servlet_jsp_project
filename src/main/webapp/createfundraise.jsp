@@ -10,27 +10,27 @@
 <jsp:include page="header.jsp"></jsp:include>
     <h2>Create a FundRaise Campaign</h2>
     
-			<%
-			String errorMessage = request.getParameter("errorMessage");
-			if (errorMessage != null) {
-				out.println("<p class='error'>" + errorMessage + "</p>");
-			}
-			%>
+			<% 
+       			String errorMessage = (String) request.getAttribute("errorMessage");
+    			if (errorMessage != null) { 
+				%>
+    			<p class='error'><%= errorMessage %></p>
+				<% } %>
     <form action="CreateFundraiseServlet" method="post">
         <label for="cause">Cause:</label><br>
-        <input type="text" id="cause" name="cause" autocomplete="off" required><br>
+        <input type="text" id="cause" name="cause" autocomplete="off" value="${cause}" required><br>
         
         <label for="coverpic">Cover Picture URL:</label><br>
-        <input type="text" id="coverpic" name="coverpic" required><br>
+        <input type="text" id="coverpic" name="coverpic" value="${coverpic}" required><br>
         
         <label for="title">Title:</label><br>
-        <input type="text" id="title" name="title" required><br>
+        <input type="text" id="title" name="title" value="${title}" required><br>
         
         <label for="story">Story:</label><br>
-        <textarea id="story" name="story" rows="4" cols="50" required></textarea><br>
+        <textarea id="story" name="story" rows="4" cols="50"  required>${story}</textarea><br>
         
         <label for="expectedAmt">Expected Amount:</label><br>
-        <input type="number" id="expectedAmt" name="expectedAmt" required><br>
+        <input type="number" min = 1 id="expectedAmt" name="expectedAmt" value="${expectedAmt}"required><br>
         
         <input type="submit" value="Create Fundraiser">
     </form>

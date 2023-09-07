@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>All Fundraise Campaigns</title>
-    <style>
-        .fundraise-card {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-            max-width: 300px;
-        }
-    </style>
+<title>All Fundraise Campaigns</title>
+<style>
+.fundraise-card {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 10px;
+	max-width: 300px;
+	height: 300px;
+}
+
+#coverpic {
+	max-width: 300px;
+	max-height: 200px;
+	margin: auto;
+}
+
+#fundraiseContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+</style>
 </head>
 <body>
-    <h1>All Fundraise Campaigns</h1>
-    <a href="index.html">Go Back to Home</a>
+	<h1>All Fundraise Campaigns</h1>
+	<a href="index.html">Go Back to Home</a>
 
-    <div class="fundraise-cards" id="fundraiseContainer">
-        <!-- Fundraises will be displayed here -->
-    </div>
+	<div class="fundraise-cards" id="fundraiseContainer">
+		<!-- Fundraises will be displayed here -->
+	</div>
 
-    <script>
-        // Fetch the fundraise data
+	<script>
+    
         fetch("GetAllFundrasie")
             .then(response => response.json())
             .then(data => {
@@ -30,7 +43,6 @@
                 console.error("Error fetching fundraise data:", error);
             });
 
-        // Display the fundraise data
         function displayFundraises(fundraises) {
             let fundraiseContainer = document.getElementById("fundraiseContainer");
             fundraiseContainer.innerHTML = "";
@@ -44,11 +56,17 @@
 
                 let cause = document.createElement("p");
                 cause.textContent = "Cause: " + fundraise.cause;
+                
+                let image = document.createElement("img");
+                image.setAttribute("id", "coverpic");
+                image.src = fundraise.coverpic;
 
-                fundraiseCard.appendChild(title);
-                fundraiseCard.appendChild(cause);
+                fundraiseCard.append(title);
+                fundraiseCard.append(cause);
+                fundraiseCard.append(image);
+                
 
-                fundraiseContainer.appendChild(fundraiseCard);
+                fundraiseContainer.append(fundraiseCard);
             });
         }
     </script>

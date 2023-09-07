@@ -1,4 +1,4 @@
 com\fssa\pinapp\servlet\GetAllFundrasie.class
 com\fssa\pinapp\servlet\CreateFundraiseServlet.class
-com\fssa\pinapp\servlet\LoginServlet.class
 com\fssa\pinapp\servlet\RegisterServlet.class
+com\fssa\pinapp\servlet\LoginServlet.class

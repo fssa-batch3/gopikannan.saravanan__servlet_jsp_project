@@ -33,8 +33,8 @@
 
 				<button type="submit">Login</button>
 			
-				<br /> <a href="./register.html"
-					style="padding-left: 30px; color: blueviolet; text-decoration: none">Don't
+				<br /> 
+				<a href="register.jsp"style="padding-left: 30px; color: blueviolet; text-decoration: none">Don't
 					have an account register here</a>
 			</form>
 		</div>

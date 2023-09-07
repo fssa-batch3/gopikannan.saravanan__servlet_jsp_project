@@ -21,7 +21,7 @@ public class GetAllFundrasie extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		FundraiseService fundraiseservice = new FundraiseService();
-
+ 
 		try {
 			List<Fundraise> fundraises = fundraiseservice.viewFundraisesServices();
 			request.setAttribute("FUNDRAISE_LIST", fundraises);

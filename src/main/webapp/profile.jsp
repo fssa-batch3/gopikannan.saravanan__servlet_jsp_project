@@ -19,18 +19,21 @@
 				%>
 	<a href="LogoutServlet">Logout</a>			
     <c:if test="${not empty user}">
-        <p>Name: ${user.username}</p>
-        <p>Email: ${user.mail}</p>
-        <div id="pwdContainer">
-            <p id="pwd">Password: ********</p>
-            <button id="showpassword" onclick="passwordShow()">Show Password</button>
-        </div>
-        <p>Phone: ${user.mobileno}</p>
-        <p>Account Number: ${user.accNo}</p>
-        <p>IFSC code: ${user.ifscNo}</p>
-        <p>Account Holder Name: ${user.accName}</p>
 
-        <div id="editForm" style="display: none;">
+		<div id="profile">
+			<p>Name: ${user.username}</p>
+			<p>Email: ${user.mail}</p>
+			<div id="pwdContainer">
+				<p id="pwd">Password: ********</p>
+				<button id="showpassword" onclick="passwordShow()">Show
+					Password</button>
+			</div>
+			<p>Phone: ${user.mobileno}</p>
+			<p>Account Number: ${user.accNo}</p>
+			<p>IFSC code: ${user.ifscNo}</p>
+			<p>Account Holder Name: ${user.accName}</p>
+		</div>
+		<div id="editForm" style="display: none;">
             <form id ="form" action="UserProfileServlet" method="post">
                 <label for="username">Name:</label>
                 <input type="text" id="username" name="username" value="${user.username}">
