@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.fssa.pin.model.User;
 import com.fssa.pin.service.UserService;
@@ -38,10 +39,12 @@ public class RegisterServlet extends HttpServlet {
 		UserService userservice = new UserService();
 		try {
 			userservice.registerUser(user);
-			out.append("Registration Successfully");
-			response.sendRedirect("login.jsp");
+			HttpSession session = request.getSession();
+			session.setAttribute("loggedInEmail", email);
+			session.setAttribute("userId", user.getUserid());
+			response.sendRedirect("index.jsp");
 		} catch (ServiceException e) {
-			response.sendRedirect("register.jsp?errorMessage=Register User Failed : " + e.getMessage());
+			response.sendRedirect("./login-signup/register.jsp?errorMessage=Register User Failed : " + e.getMessage());
 			out.println("Registration failed : " + e.getMessage());
 		}
 

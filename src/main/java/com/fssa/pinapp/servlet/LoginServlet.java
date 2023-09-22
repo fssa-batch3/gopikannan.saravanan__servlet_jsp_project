@@ -30,17 +30,20 @@ public class LoginServlet extends HttpServlet {
 		user.setPassword(password);
 
 
-		UserService loginservice = new UserService();
+		UserService userService = new UserService();
 
 		try {
-			loginservice.loginUser(user);
+			userService.loginUser(user);
+			User user1 = userService.findUserByEmailService(user.getMail());
+			
 			HttpSession session = request.getSession();
 			session.setAttribute("loggedInEmail", email);
-			response.sendRedirect("GetAllFundrasie");
+			session.setAttribute("userId", user1.getUserid());
+			response.sendRedirect("index.jsp");
 
 		} catch (ServiceException e) {
 			request.setAttribute("errorMessage", "Login Failed : " + e.getMessage());
-			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("./login-signup/login.jsp");
 			dispatcher.forward(request, response);
 			
 		}

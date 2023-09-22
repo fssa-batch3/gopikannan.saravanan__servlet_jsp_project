@@ -1,0 +1,167 @@
+/* main content */
+.paymentpage {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--body-text-color);
+  border: 5px double#3f3a81;
+  margin: auto;
+  width: 250px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.container {
+  width: 47%;
+  height: fit-content;
+  background-color: white;
+  margin: auto;
+  box-shadow: 8px 8px 4px rgb(180, 193, 255);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card-details {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--body-text-color);
+  border-bottom: 2px solid #3f3a81;
+  margin: auto;
+  padding-top: 20px;
+  width: fit-content;
+}
+.first-sec {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: space-around;
+}
+input {
+  width: 100%;
+  border: gray solid 2px;
+  outline: none;
+}
+.name-txt {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+}
+.user-details {
+  width: 70%;
+}
+
+label {
+  color: var(--body-text-color);
+  font-size: 16px;
+  font-weight: 600;
+}
+select {
+  height: 30px;
+}
+.cvv {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+}
+.first-sec,
+.second-sec,
+.donate-btn {
+  margin: auto;
+  margin-bottom: 20px;
+  width: 90%;
+}
+.num {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.donate-btn {
+  width: 90%;
+}
+.third-sec {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+.card-png {
+  width: 50px;
+  height: 50px;
+  margin-top: 3px;
+}
+.donate-btn {
+  height: 40px;
+  margin-top: 0px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--toggle-color);
+  background-color: var(--body-text-color);
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 40px;
+}
+.donate-btn:hover {
+  background-color: var(--primary-color);
+}
+input[type="text"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="text"]:focus:invalid {
+  border: solid 2px red;
+}
+input[type="password"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="password"]:focus:invalid {
+  border: solid 2px red;
+}
+/* main content ends*/
+@media screen and (max-width: 750px) {
+  .container {
+    width: 50%;
+  }
+  .card-png {
+    width: 30px;
+    height: 30px;
+  }
+  .paymentpage {
+    font-size: 16px;
+    width: 200px;
+  }
+  .card-details {
+    font-size: 16px;
+  }
+  label {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .container {
+    width: 50%;
+  }
+  .card-png {
+    width: 30px;
+    height: 30px;
+  }
+  .first-sec {
+    display: flex;
+    flex-direction: column;
+  }
+  .third-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .user-details {
+    width: 100%;
+  }
+}

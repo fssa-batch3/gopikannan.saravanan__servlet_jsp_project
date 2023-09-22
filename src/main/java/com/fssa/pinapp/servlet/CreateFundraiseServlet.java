@@ -28,6 +28,7 @@ public class CreateFundraiseServlet extends HttpServlet {
 		String title = request.getParameter("title");
 		String story = request.getParameter("story");
 		String expectedAmtString = request.getParameter("expectedAmt");
+		String document = request.getParameter("document");
 		int expectedAmtInt = Integer.parseInt(expectedAmtString);
 
 		try {
@@ -36,7 +37,7 @@ public class CreateFundraiseServlet extends HttpServlet {
 
 			if (user.getAccNo() == 0 && user.getIfscNo() == null && user.getAccName() == null) {
 				response.sendRedirect(
-						"UserProfileServlet?errorMessage=Account details are null. Please update your profile and create a Fundraise.");
+						request.getContextPath()+"/UserProfileServlet?errorMessage=Account details are null. Please update your profile and create a Fundraise.");
 				return;
 			}
 
@@ -52,21 +53,21 @@ public class CreateFundraiseServlet extends HttpServlet {
 			fundraise.setTitle(title);
 			fundraise.setStory(story);
 			fundraise.setExpectedAmount(expectedAmtInt);
-
+			fundraise.setDocument(document);
 			fundraiseservice.createFundraise(fundraise);
 
-			response.sendRedirect("GetAllFundrasie");
+			response.sendRedirect("../pinapp/fundraiser/fundraiser.jsp");
 		} catch (ServiceException e) {
-		
-			request.setAttribute("cause", cause);
-			request.setAttribute("coverpic", coverPic);
-			request.setAttribute("title", title);
-			request.setAttribute("story", story);
-			request.setAttribute("expectedAmt", expectedAmtString);
-
-			request.setAttribute("errorMessage", "Create Fundraise Failed: " + e.getMessage());
-			request.getRequestDispatcher("createfundraise.jsp").forward(request, response);
-//			response.sendRedirect("createfundraise.jsp?errorMessage=Create Fundraise Failed : " + e.getMessage());
+		    request.setAttribute("cause", cause);
+		    request.setAttribute("coverpic", coverPic);
+		    request.setAttribute("title", title);
+		    request.setAttribute("story", story);
+		    request.setAttribute("expectedAmt", expectedAmtString);
+		    request.setAttribute("document", document);
+		    request.setAttribute("errorMessage", "Create Fundraise Failed: " + e.getMessage());
+		    
+		    request.getRequestDispatcher("./fundraiser/basicdetailsfundraiser.jsp").forward(request, response);
 		}
+
 	}
 }

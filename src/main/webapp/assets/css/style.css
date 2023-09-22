@@ -1,0 +1,226 @@
+#homeId {
+  border-bottom: 5px solid #695cfe;
+}
+/* main content style starts */
+
+.banner {
+  position: relative;
+  z-index: -1;
+}
+.login {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-top: -500px;
+}
+.side-head {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  color: #3f3a81;
+  border-bottom: 2px solid rgba(0, 0, 139, 0.224);
+  font-weight: 600;
+}
+
+.search {
+  text-align: center;
+  padding-top: 20px;
+}
+#search {
+  padding-left: 30px;
+  outline: none;
+}
+input[type="text"] {
+  width: 500px;
+  height: 50px;
+  border-radius: 20px;
+  border: solid rgba(105, 105, 255, 0.411);
+}
+[type="submit"] {
+  border: solid rgba(105, 105, 255, 0.411);
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  background-color: #e4e2ff;
+  cursor: pointer;
+}
+.container {
+  /* display: grid;
+  grid-template-columns: auto auto auto; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+  gap: 30px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.box {
+  width: 350px;
+  height: 480px;
+  background-color: white;
+  box-shadow: rgb(180, 193, 255) 4px 4px 4px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+.linkspanner {
+  position: absolute;
+  z-index: 10;
+}
+.box:hover {
+  box-shadow: rgb(140, 159, 255) 4px 4px 4px;
+}
+.box .image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 350px;
+  height: 270px;
+}
+.box h4 {
+  color: var(--body-text-color);
+  text-align: center;
+  padding-bottom: 10px;
+}
+.box .progress-sec {
+  height: 90px;
+}
+.progress_bar_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+progress {
+  width: 200px;
+  height: 15px;
+  border: none;
+  border-radius: 100%;
+  background-color: #3f3a81;
+}
+progress::-webkit-progress-value {
+  border-radius: 50px;
+  background-color: #695cfe;
+}
+progress::-webkit-progress-bar {
+  border-radius: 50px;
+  background-color: #f2f2f2;
+}
+
+.box .amount {
+  color: var(--body-text-color);
+  display: flex;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+.box .count {
+  position: relative;
+  left: 75%;
+  top: -26%;
+}
+.box .user {
+  margin: auto;
+  border-top: 2px solid #707070;
+  text-align: center;
+  padding-top: 10px;
+  width: 250px;
+}
+
+.viewmore {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-like {
+  z-index: 5;
+}
+
+.faqs {
+  padding: 0px 20px 20px;
+}
+details {
+  padding: 10px 20px;
+  border-radius: 7px;
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  cursor: pointer;
+}
+details summary {
+  outline: none;
+  font-size: 19px;
+  font-weight: 500;
+}
+.boxes {
+  width: 60%;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.boxes .heading {
+  background-color: #eee;
+  border-radius: 7px 7px 0px 0px;
+  padding: 10px;
+  color: var(--body-text-color);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+}
+.text {
+  color: #3f3a81;
+}
+@media screen and (max-width: 1200px) {
+  .side-head {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 15px;
+    color: #3f3a81;
+  }
+  input[type="text"] {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid rgba(105, 105, 255, 0.411);
+  }
+  [type="submit"] {
+    border: solid rgba(105, 105, 255, 0.411);
+    border-radius: 5px;
+    width: 40px;
+    height: 38px;
+  }
+  .container {
+    gap: 30px;
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  .box {
+    width: 350px;
+    height: 480px;
+    background-color: white;
+    box-shadow: rgb(180, 193, 255) 4px 4px 4px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (max-width: 750px) {
+    .hero-sec {
+      top: 0;
+    }
+    .container {
+      margin: auto;
+      margin-top: 40px;
+    }
+  }
+}

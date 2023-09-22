@@ -1,0 +1,89 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIN(People In Need) About </title>
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/about.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/header.css" />
+     <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/footer.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/assets/css/universal.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script type="text/javascript">
+      function togglemenu() {
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+    </script>
+  </head>
+  <body>
+    <!--  header starts-->
+    <jsp:include page="/components/header1.jsp"></jsp:include>
+    <!-- header ends -->
+
+    <!-- banner section -->
+    <div class="hero-sec">
+      <img
+        class="banner"
+        src="<%= request.getContextPath() %>/assets/images/about us.png"
+        alt="banner"
+        width="100%"
+      />
+    </div>
+    <!-- banner section ends-->
+
+    <!-- main-about us -->
+    <div class="container">
+      <div class="box">
+        <img
+          class="image"
+          src="<%= request.getContextPath() %>/assets/images/papa.jpg"
+          alt="smilingbaby"
+        />
+        <p class="abttxt">
+          <b>What we do?<br /></b> Started in 2015, we have grown through the
+          years to be the most trusted crowdfunding platform in India. The
+          belief that people are inherently humane and willing to help forms the
+          crux of what we do. We have been able to use technology to its best
+          and make online giving a seamless and transparent process. Anyone
+          across the country, irrespective of their socio-economic background
+          can raise a fundraiser on Pin. We believe that in the years to come
+          online giving will be ‘the’ way to charitable and humanitarian acts.
+        </p>
+      </div>
+      <br /><br />
+      <div class="box1">
+        <p class="abttxt1">
+          <b>Starting a fundraiser is easy</b>, as anyone can start a DIY
+          (Do-It-Yourself) campaign. The campaign organizers are required to
+          sign up and enter basic information about the beneficiary - the
+          person/group/NGO for whom the funds are raised. Enter details about
+          the campaign (such as the story/cause) and required fund amount along
+          with the photo and required documents for which the funds are
+          required.
+        </p>
+        <img
+          src="<%= request.getContextPath() %>/assets/images/crowdfunding.jpg"
+          alt="crowdfunding"
+          class="image"
+        />
+      </div>
+    </div>
+
+    <!-- Footer  -->
+    <div class="footer"></div>
+    <!-- footer end -->
+    <script src="<%= request.getContextPath() %>/assets/js/footer.js"></script>
+  </body>
+</html>

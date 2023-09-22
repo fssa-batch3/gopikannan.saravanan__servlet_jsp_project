@@ -3,6 +3,7 @@ package com.fssa.pinapp.servlet;
 import java.io.IOException;
 
 
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,10 +38,10 @@ public class UserProfileServlet extends HttpServlet {
 
 				request.setAttribute("user", user);
 
-				RequestDispatcher dispatcher = request.getRequestDispatcher("profile.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("./header/profile.jsp");
 				dispatcher.forward(request, response);
 			} catch (ServiceException e) {
-				response.sendRedirect("profile.jsp?errorMessage=User profile view Failed : " + e.getMessage());
+				response.sendRedirect("./header/profile.jsp?errorMessage=User profile view Failed : " + e.getMessage());
 			}
 
 		}
@@ -59,6 +60,7 @@ public class UserProfileServlet extends HttpServlet {
 		String accNo = request.getParameter("accno").trim();
 		String ifsc = request.getParameter("ifsc").trim();
 		String accName = request.getParameter("accountName").trim();
+		String profilePic = request.getParameter("profilePic").trim();
 		
 		
 		  try {
@@ -73,12 +75,13 @@ public class UserProfileServlet extends HttpServlet {
 		        user.setAccNo(userAccNo);
 		        user.setIfscNo(ifsc);
 		        user.setAccName(accName);
+		        user.setProfilePic(profilePic);
 		        
 		        userService.updateUser(user);
 
 		        response.sendRedirect("UserProfileServlet");
 		    } catch (ServiceException e) {
-		        response.sendRedirect("profile.jsp?errorMessage=Update Failed: " + e.getMessage());
+		        response.sendRedirect("UserProfileServlet?errorMessage=Update Failed: " + e.getMessage());
 		    }
 	}
 
