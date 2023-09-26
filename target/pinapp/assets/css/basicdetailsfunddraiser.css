@@ -1,0 +1,100 @@
+/* main content */
+.details-head {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--body-text-color);
+  border: 5px double#3f3a81;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 320px;
+}
+.container {
+  width: 50%;
+  height: fit-content;
+  background-color: white;
+  margin: auto;
+  padding: 40px 50px;
+  box-shadow: 8px 8px 4px rgb(180, 193, 255);
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+.input-div {
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+input {
+  width: 100%;
+  font-size: 18px;
+  outline: none;
+  border: 2px solid #3f3a813c;
+  color: black;
+}
+
+textarea {
+  border: 2px solid #3f3a813c;
+  outline: none;
+}
+.continue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  color: var(--toggle-color);
+  background-color: var(--body-text-color);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+.continue:hover {
+  background-color: var(--primary-color);
+}
+textarea:focus:valid {
+  border: solid 2px green;
+}
+textarea:focus:invalid {
+  border: solid 2px red;
+}
+input[type="text"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="text"]:focus:invalid {
+  border: solid 2px red;
+}
+input[type="url"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="url"]:focus:invalid {
+  border: solid 2px red;
+}
+input[type="email"]:focus:valid {
+  border: solid 2px green;
+}
+input[type="email"]:focus:invalid {
+  border: solid 2px red;
+}
+
+/* main content  ends */
+@media screen and (max-width: 750px) {
+  .container {
+    width: 70%;
+  }
+  .details-head {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container {
+    width: 80%;
+  }
+  #otp {
+    width: 100%;
+  }
+}

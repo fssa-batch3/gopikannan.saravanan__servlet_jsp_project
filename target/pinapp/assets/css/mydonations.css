@@ -1,0 +1,266 @@
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-color: rgb(228, 233, 247);
+  --header-color: #fff;
+  --primary-color: #695cfe;
+  --primary-color-light: #f6f5ff;
+  --toggle-color: #ddd;
+  --text-color: #707070;
+  --body-text-color: #3f3a81;
+}
+.mydonations {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--body-text-color);
+  background-image: url("../assets/images/pinreciept_page-0001.jpg");
+  border: 5px double#3f3a81;
+  margin: auto;
+  width: 250px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+body {
+  height: 100%;
+  background-color: var(--body-color);
+}
+
+
+.donate {
+  border-bottom: 5px solid #695cfe;
+}
+
+
+.overallcontainer {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.first-second-box-container {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 100px;
+  justify-content: center;
+  gap: 49px;
+}
+.box {
+  width: 350px;
+  height: 400px;
+  background-color: white;
+  box-shadow: rgb(180, 193, 255) 4px 4px 4px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.box:hover {
+  box-shadow: rgb(140, 159, 255) 4px 4px 4px;
+}
+
+.box h4 {
+  color: var(--body-text-color);
+  text-align: center;
+  padding-top: 10px;
+}
+.second-box {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+.second-box .amountdetails {
+  text-align: center;
+  color: var(--body-text-color);
+  width: 200px;
+  margin: auto;
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-size: 16px;
+  border-bottom: 2px solid #3f3a81;
+}
+
+progress {
+  width: 250px;
+  height: 15px;
+  margin-left: 40px;
+  border: none;
+  border-radius: 100%;
+  background-color: #3f3a81;
+}
+progress::-webkit-progress-value {
+  border-radius: 50px;
+  background-color: #695cfe;
+}
+progress::-webkit-progress-bar {
+  border-radius: 50px;
+  background-color: #f2f2f2;
+}
+.second-box .progress-sec {
+  margin: auto;
+}
+.second-box #percent {
+  margin-bottom: -30px;
+  color: #3f3a81;
+  font-weight: bold;
+}
+.second-box .amount {
+  color: var(--body-text-color);
+  margin-top: 10px;
+}
+
+.second-box .like {
+  margin-left: 40px;
+  margin-top: -15px;
+}
+.progress_bar_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.share {
+  position: relative;
+  top: 5px;
+}
+.box .user {
+  margin: auto;
+  border-top: 2px solid #707070;
+  text-align: center;
+  padding-top: 10px;
+  width: 250px;
+  margin-top: 1rem;
+}
+
+.image {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 350px;
+}
+.second-box {
+  width: 500px;
+  height: 320px;
+  background-color: white;
+  box-shadow: rgb(180, 193, 255) 4px 4px 4px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 40px;
+}
+
+.contribution {
+  color: var(--body-text-color);
+  width: 180px;
+  margin-left: 5%;
+  margin-top: 5%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  border-bottom: 2px solid #3f3a81;
+}
+
+
+.yourdetails {
+  margin: 20px 20px 0px 30px;
+}
+
+
+.donater_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+
+.profile-name {
+  margin-top: 30px;
+  margin-left: 10px;
+  color: var(--body-text-color);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+.rs {
+  margin-top: 30px;
+  /* margin-left: 40%; */
+  position: relative;
+  left: 30%;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.contribution-box {
+  display: flex;
+}
+
+
+.download {
+  background-color: #3f3a81;
+  border: none;
+  color: var(--toggle-color);
+  font-weight: bold;
+  font-size: 12px;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+.download:hover {
+  background-color: var(--primary-color);
+}
+
+
+@media screen and (max-width: 1200px) {
+  .first-second-box-container {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+  .second-box {
+    width: 450px;
+    height: 320px;
+  }
+}
+@media screen and (max-width: 875px) {
+  .first-second-box-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+  .rs {
+    margin-top: 30px;
+    left: 20%;
+    font-weight: bold;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .second-box {
+    width: 400px;
+    height: 320px;
+  }
+  .rs {
+    margin-top: 30px;
+    left: 20%;
+    font-weight: bold;
+    font-size: 18px;
+  }
+}

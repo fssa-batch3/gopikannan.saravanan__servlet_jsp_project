@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIN(People In Need) My donations</title>
+    <link rel="stylesheet" href="../../Assets/css/debitcard.css" />
+    <link rel="stylesheet" href="../../Assets/css/header.css" />
+    <link rel="stylesheet" href="../../Assets/css/footer.css" />
+    <link rel="stylesheet" href="../../Assets/css/universal.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script type="text/javascript">
+      function togglemenu() {
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+    </script>
+  </head>
+  <body>
+    <!--  header starts-->
+    <header></header>
+
+    <div class="paymentpage">Payment Page</div>
+    <div class="container">
+      <div class="card-details">Card Details</div>
+      <div class="first-sec">
+        <div class="user-details">
+          <label>Card Holder Name</label><br />
+          <input
+            id="cardname"
+            type="text"
+            class="name-txt"
+            pattern="^(?=.{3,50}$)[A-Za-z]+(?:\s[A-Za-z]+){0,3}$"
+            title="Enter only name with alphabets"
+            required
+          />
+        </div>
+        <div class="cvv-details">
+          <label>CVV </label><br />
+          <input
+            type="password"
+            id="cvv"
+            class="cvv"
+            pattern="[0-9]{3}"
+            maxlength="3"
+          />
+        </div>
+      </div>
+      <!-- first-sec end -->
+
+      <!-- second-sec -->
+      <div class="second-sec">
+        <label>Card Number</label><br />
+        <input
+          id="cardnum"
+          class="num"
+          type="text"
+          required
+          pattern="(\d{4}\s?){4}"
+          placeholder="&#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226; &#8226;&#8226;&#8226;&#8226;"
+          maxlength="19"
+        />
+      </div>
+      <!-- sec-sec-ends -->
+
+      <!-- third-sec -->
+
+      <div class="third-sec">
+        <div class="expirydate">
+          <label>Expiry Date</label><br />
+          <select required name="months" id="months">
+            <option value="Jan">Jan</option>
+            <option value="Feb">Feb</option>
+            <option value="Mar">Mar</option>
+            <option value="Apr">Apr</option>
+            <option value="May">May</option>
+            <option value="Jun">Jun</option>
+            <option value="Jul">Jul</option>
+            <option value="Aug">Aug</option>
+            <option value="Sep">Sep</option>
+            <option value="Oct">Oct</option>
+            <option value="Nov">Nov</option>
+            <option value="Dec">Dec</option>
+          </select>
+          <select required name="years" id="years">
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+          </select>
+        </div>
+        <!-- expirydate ends -->
+
+        <div class="card-icons">
+          <img
+            src="../../Assets/images/Visa.jpg"
+            alt="Visa card"
+            class="card-png"
+          />
+          <img
+            src="../../Assets/images/Rupay-Logo.png"
+            alt="Rupay"
+            class="card-png"
+            style="border: 1px solid darkblue; border-radius: 5px"
+          />
+          <img
+            src="../../Assets/images/mastercard.jpg"
+            alt="mastercard"
+            class="card-png"
+          />
+          <img
+            src="../../Assets/images/paypal.jpg"
+            alt="paypal"
+            class="card-png"
+          />
+        </div>
+      </div>
+      <!-- third-sec ends-->
+      <button class="donate-btn" onclick="donate()">Donate</button>
+    </div>
+
+    <!-- Footer  -->
+    <div class="footer"></div>
+    <!-- footer end -->
+    <script src="../../Assets/js/debitcard.js"></script>
+    <script src="../../Assets/js/footer.js"></script>
+    <script src="../../Assets/js/header.js"></script>
+  </body>
+</html>

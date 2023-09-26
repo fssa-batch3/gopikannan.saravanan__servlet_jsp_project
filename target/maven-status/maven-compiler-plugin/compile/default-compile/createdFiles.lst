@@ -1,4 +1,13 @@
-com\fssa\pinapp\servlet\GetAllFundrasie.class
 com\fssa\pinapp\servlet\CreateFundraiseServlet.class
-com\fssa\pinapp\servlet\RegisterServlet.class
+com\fssa\pinapp\servlet\TransactionServlet.class
+com\fssa\pinapp\servlet\UpdateFundraiseServlet.class
+com\fssa\pinapp\servlet\LastDonationFromDb.class
 com\fssa\pinapp\servlet\LoginServlet.class
+com\fssa\pinapp\servlet\ViewUserFundraiseCards.class
+com\fssa\pinapp\servlet\UserProfileServlet.class
+com\fssa\pinapp\servlet\ViewUserDonations.class
+com\fssa\pinapp\servlet\RegisterServlet.class
+com\fssa\pinapp\servlet\LogoutServlet.class
+com\fssa\pinapp\servlet\DeleteFundraiseServlet.class
+com\fssa\pinapp\servlet\GetAllFundraise.class
+com\fssa\pinapp\servlet\ViewAllDonationsServlet.class

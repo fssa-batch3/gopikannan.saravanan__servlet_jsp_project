@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIN(People In Need) My donations</title>
+    <link rel="stylesheet" href="../.assets/css/profile.css" />
+    <link rel="stylesheet" href="../../Assets/css/header.css" />
+    <link rel="stylesheet" href="../../Assets/css/footer.css" />
+    <link rel="stylesheet" href="../../Assets/css/universal.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script type="text/javascript">
+      function togglemenu() {
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+    </script>
+  </head>
+  <body>
+    <!--  header starts-->
+    <header></header>
+    <!-- header ends -->
+    <div class="profile-head">Profile Details</div>
+    <!-- form -->
+    <div class="container">
+      <form id="profile_form">
+        <img alt="userprofile" id="profile" />
+        <div class="input-div">
+          <label>ProfilePic</label
+          ><input
+            id="pic"
+            type="url"
+            placeholder="Fill in the details"
+            title="Enter only url of your image"
+          />
+        </div>
+        <div class="input-div">
+          <label>Name</label
+          ><input
+            id="name"
+            type="text"
+            pattern="^(?=.{2,50}$)[A-Za-z]+(?:\s[A-Za-z]+){0,3}$"
+            title="Name must be only in alphabets and First name last name both can be added optional"
+          />
+        </div>
+        <div class="input-div">
+          <label>Mobile-Number</label
+          ><input
+            id="phno"
+            type="text"
+            pattern="[0-9]{10}"
+            required
+            title=" Phone number must have 10 digits"
+          />
+        </div>
+        <div class="input-div">
+          <label>Email</label
+          ><input
+            id="email"
+            type="email"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            required
+          />
+        </div>
+        <div class="input-div">
+          <label>Password</label
+          ><input id="password" type="password" required />
+        </div>
+        <div class="input-div">
+          <label>Address</label
+          ><input
+            id="address"
+            type="text"
+            placeholder="Fill in the details"
+            title="Enter your full address where you live"
+            pattern="^(?=.{0,200}$)[A-Za-z0-9!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+(?:\s[A-Za-z0-9\s!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+){0,10}$"
+          />
+        </div>
+        <div class="input-div">
+          <label>Account Number*</label
+          ><input
+            id="acc"
+            type="text"
+            placeholder="Fill in the details"
+            pattern="[0-9]{10,}"
+            title="Enter your valid account number"
+          />
+        </div>
+        <div class="input-div">
+          <label> IFSC Code*</label
+          ><input
+            type="text"
+            id="ifc"
+            pattern="[A-Z|a-z]{4}[0][0-9|A-Z|a-z]{6,}"
+            title="Enter valid IFSC code"
+            placeholder="Fill in the details"
+            required
+          />
+        </div>
+        <div class="input-div">
+          <label>Bank Name</label
+          ><input
+            type="text"
+            id="accname"
+            placeholder="Fill in the details"
+            pattern="^(?=.{2,50}$)[A-Za-z]+(?:\s[A-Za-z]+){0,3}$"
+            title="Enter your bank name where you have the account"
+          />
+        </div>
+        <div class="input-div">
+          <label>Branch Name</label
+          ><input
+            type="text"
+            id="branchname"
+            placeholder="Fill in the details"
+            title="Enter your bank name where you have the account"
+          />
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="save">Save</button>
+          <button type="submit" class="save" id="delete">Delete</button>
+          <img
+            onclick="logout()"
+            src="../../Assets/images/logout (1).png"
+            alt="logout"
+            class="logout"
+            width="50pc"
+          />
+        </div>
+
+        <!-- form ends -->
+      </form>
+      <p id="p"></p>
+    </div>
+    <!-- Footer  -->
+
+    <div class="footer"></div>
+
+    <!-- footer end -->
+
+    <script src="../../Assets/js/header.js"></script>
+    <script src="../../Assets/js/footer.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script>
+      // to get the usercheck details
+      let Check = JSON.parse(window.localStorage.getItem("userCheckdetails"));
+      let email_check = Check.user_mail;
+      //  to get the main profile details
+      let details = JSON.parse(window.localStorage.getItem("userDetails"));
+
+      // find the object that matches the mail
+      let user_ob = details.find(function (objuser) {
+        let mailcheck = objuser["user_mail"];
+        console.log(mailcheck);
+        if (email_check === mailcheck) {
+          return true;
+        }
+      });
+      console.log(user_ob);
+
+      // Initially to store some value
+      let username = (document.getElementById("name").value =
+        user_ob["user_name"]);
+      let userphno = (document.getElementById("phno").value =
+        user_ob["user_phno"]);
+      let usermail = (document.getElementById("email").value =
+        user_ob["user_mail"]);
+      let userpwd = (document.getElementById("password").value =
+        user_ob["user_pwd"]);
+
+      // to show profile pic in the user_ob object
+      let profile_pic = document.getElementById("profile");
+      profile_pic.setAttribute("src", user_ob["user_pic"]);
+
+      let form = document.getElementById("profile_form");
+
+      // to edit the profile details
+
+      let bankName = document.getElementById("accname");
+      let branchName = document.getElementById("branchname");
+
+      // event listener called change to make the users ifsc find and fetch from the api razor api
+
+      document
+        .getElementById("ifc")
+        .addEventListener("change", function (event) {
+          const ifscValue = event.target.value;
+
+          fetch(`https://ifsc.razorpay.com/${ifscValue}`)
+            .then((response) => response.json())
+            .then((data) => {
+              bankName.value = data["BANK"];
+              branchName.value = data["BRANCH"];
+            })
+            .catch((error) => {
+              bankName.value = "";
+              branchName.value = "";
+              console.error("Error:", error);
+              alert(
+                "Failed to fetch bank and branch details for the entered IFSC code."
+              );
+            });
+        });
+
+      //form this event listener called submit which start after the user click the submit button
+      //  and assign it in the previously stored obj of the user
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let user_pic = document.getElementById("pic").value;
+        let user_name = document.getElementById("name").value;
+        let user_phno = document.getElementById("phno").value;
+        let user_mail = document.getElementById("email").value;
+        let user_pwd = document.getElementById("password").value;
+        let useraddress = document.getElementById("address").value;
+        let useracco = document.getElementById("acc").value;
+        let user_ifsc = document.getElementById("ifc").value;
+        let bank_name = document.getElementById("accname").value;
+        let branch_name = document.getElementById("branchname").value;
+
+        let newobj = {
+          user_pic,
+          user_name,
+          user_phno,
+          user_mail,
+          user_pwd,
+          useraddress,
+          useracco,
+          bankname: bank_name,
+          branchname: branch_name,
+          userifsc: user_ifsc,
+        };
+
+        let merge = Object.assign(user_ob, newobj);
+
+        let userindex = details.indexOf(user_ob);
+
+        details[userindex] = merge;
+
+        window.localStorage.setItem("userDetails", JSON.stringify(details));
+        alert("Successfully updated your profile !!!");
+        location.reload();
+      });
+
+      let check = true;
+      const profile_details = JSON.parse(
+        window.localStorage.getItem("userDetails")
+      );
+      let profile_ = profile_details.find(function (objuser) {
+        let mailcheck;
+        mailcheck = objuser["user_mail"];
+        console.log(mailcheck);
+        console.log(email_check);
+
+        if (email_check == mailcheck) {
+          return true;
+        }
+      });
+
+      // to show it after editing details
+
+      const profilepic = (document.getElementById("pic").value =
+        profile_["user_pic"]);
+      const user_name = (document.getElementById("name").value =
+        profile_["user_name"]);
+      const user_phno = (document.getElementById("phno").value =
+        profile_["user_phno"]);
+      const user_mail = (document.getElementById("email").value =
+        profile_["user_mail"]);
+      const user_pwd = (document.getElementById("password").value =
+        profile_["user_pwd"]);
+      const useraddress = (document.getElementById("address").value =
+        profile_["useraddress"]);
+      const useracco = (document.getElementById("acc").value =
+        profile_["useracco"]);
+      const userbankname = (document.getElementById("accname").value =
+        profile_["bankname"]);
+      const userifsc = (document.getElementById("ifc").value =
+        profile_["userifsc"]);
+      let branchname = (document.getElementById("branchname").value =
+        profile_["branchname"]);
+
+      console.log(profile_);
+
+      // delete the profile details
+      let delete_profile = document.getElementById("delete");
+      delete_profile.addEventListener("click", function (event) {
+        event.preventDefault();
+        let index = details.indexOf(user_ob);
+        let txt_confirm = confirm(
+          "Are you sure you want to delete this account"
+        );
+        if (txt_confirm !== true) {
+          return;
+        } else {
+          details.splice(index, 1);
+          window.localStorage.setItem("userDetails", JSON.stringify(details));
+          window.localStorage.removeItem("userCheckdetails");
+          window.location.href = "/index.html";
+        }
+      });
+
+
+    </script>
+  </body>
+</html>

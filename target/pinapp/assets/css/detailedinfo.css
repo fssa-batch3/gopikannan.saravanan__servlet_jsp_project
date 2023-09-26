@@ -1,0 +1,142 @@
+/* main content */
+
+.detailedinfo {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  width: 200px;
+  color: var(--body-text-color);
+  border: 5px double#3f3a81;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.container {
+  width: 800px;
+  height: fit-content;
+  background-color: white;
+  margin: auto;
+  padding: 40px 50px;
+  box-shadow: 8px 8px 4px rgb(180, 193, 255);
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.coverpic,
+.doc-div {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+}
+.image-div {
+  background-color: var(--body-text-color);
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 2px;
+  border: none;
+}
+.image-div:hover {
+  background-color: #695cfe;
+  border: none;
+}
+.gallery,
+.document {
+  margin-left: 20px;
+}
+input {
+  margin-bottom: 20px;
+}
+#title {
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #3f3a813c;
+  color: black;
+  margin-bottom: 20px;
+}
+#name {
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #3f3a813c;
+  color: black;
+  margin-bottom: 20px;
+}
+#location2 {
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #3f3a813c;
+  color: black;
+  margin-bottom: 20px;
+}
+
+#story {
+  width: 100%;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #3f3a8141;
+  color: black;
+  margin-bottom: 20px;
+}
+.upload {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  color: var(--toggle-color);
+  background-color: var(--body-text-color);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+.upload:hover {
+  background-color: var(--primary-color);
+}
+
+/* main content style ends */
+@media screen and (max-width: 800px) {
+  .container {
+    width: 80%;
+  }
+  .detailedinfo {
+    font-size: 16px;
+    width: 180px;
+  }
+  ::placeholder {
+    font-size: 16px;
+  }
+  label {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
+  ::placeholder {
+    font-size: 14px;
+  }
+  label {
+    font-size: 14px;
+  }
+}

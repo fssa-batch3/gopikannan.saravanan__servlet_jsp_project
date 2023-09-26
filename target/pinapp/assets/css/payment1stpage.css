@@ -1,0 +1,133 @@
+/* main content style starts */
+.paymentpage {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--body-text-color);
+  border: 5px double#3f3a81;
+  margin: auto;
+  width: 200px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.container {
+  width: 50%;
+  height: 300px;
+  background-color: white;
+  margin: auto;
+  box-shadow: 8px 8px 4px rgb(180, 193, 255);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.amount {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding-top: 80px;
+}
+.currency {
+  width: 50%;
+  border-bottom: 2px solid #3f3a81;
+  background: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  text-align: center;
+  color: black;
+  outline: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+label {
+  font-weight: bold;
+  padding-top: 20px;
+  font-size: 18px;
+}
+.donate-sec {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  margin: auto;
+
+  margin-top: 40px;
+  width: 80%;
+}
+.donate-btn {
+  margin-right: 30px;
+  width: 50%;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  color: var(--toggle-color);
+  background-color: var(--body-text-color);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.donate-btn:hover {
+  background-color: var(--primary-color);
+}
+.banktransfer {
+  width: 50%;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  color: var(--toggle-color);
+  background-color: var(--body-text-color);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  text-align:center;
+  padding-top:10px;
+}
+.banktransfer:hover {
+  background-color: var(--primary-color);
+}
+
+/* main content style ends */
+@media screen and (max-width: 1200px) {
+  .container {
+    height: 240px;
+  }
+  .amount {
+    padding-top: 60px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container {
+    height: 250px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .container {
+    width: 70%;
+    height: fit-content;
+  }
+  .donate-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .banktransfer {
+    width: 100%;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+  .donate-btn {
+    width: 100%;
+    font-size: 13px;
+  }
+  label {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  ::placeholder {
+    font-size: 14px;
+  }
+  .paymentpage {
+    font-size: 16px;
+  }
+}

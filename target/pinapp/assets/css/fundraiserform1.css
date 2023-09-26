@@ -1,0 +1,143 @@
+/* main content style starts */
+.details-head {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--body-text-color);
+  border: 5px double #3f3a81;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  width: 340px;
+}
+.container {
+  width: 500px;
+  background-color: white;
+  margin: auto;
+  padding: 40px 50px;
+  box-shadow: 8px 8px 4px rgb(180, 193, 255);
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+}
+.for {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+label {
+  font-weight: bold;
+}
+.input-div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.gender-div {
+  display: flex;
+  flex-direction: row;
+}
+select {
+  text-align: center;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #3f3a812f;
+  margin-left: 10px;
+}
+
+option {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#age {
+  margin-left: 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #3f3a813c;
+}
+.gender {
+  margin-left: 10px;
+  font-size: 16px;
+  padding: 5px 5px 0px 5px;
+  color: black;
+}
+.gender-div {
+  padding: 20px 0px;
+}
+#address {
+  margin-left: 10px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #3f3a813c;
+}
+
+#amount {
+  margin-left: 10px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #3f3a813c;
+  color: black;
+}
+
+.continue {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 120px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  color: var(--toggle-color);
+  background-color: var(--body-text-color);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.continue:hover {
+  background-color: var(--primary-color);
+}
+/* main content style ends */
+@media screen and (max-width: 520px) {
+  .container {
+    width: 80%;
+    height: fit-content;
+    background-color: white;
+    margin: auto;
+    padding: 40px 50px;
+    box-shadow: 8px 8px 4px rgb(180, 193, 255);
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+  }
+  .details-head {
+    text-align: center;
+    font-size: 18px;
+    width: 300px;
+  }
+  .gender-div {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+  }
+  .gender {
+    margin-left: 0px;
+    font-size: 14px;
+    padding: 0px;
+    color: black;
+  }
+  input[type="radio"] {
+    margin-top: -17px;
+  }
+  label {
+    font-size: 15px;
+  }
+}
