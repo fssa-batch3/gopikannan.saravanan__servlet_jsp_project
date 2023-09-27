@@ -18,7 +18,6 @@ window.onload=function(){
 
 
 function toViewMyDonation(view,mail){
-// console.log(details);/**/
 let container;
 let anchor;
 let first_span_tag;

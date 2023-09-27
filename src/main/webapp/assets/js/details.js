@@ -308,7 +308,6 @@ document.querySelector(".donate-box").append(titleDonaterTableSpan);
 
 
 
-
 const secondContainer = document.createElement('div');
 secondContainer.classList.add('second-container');
 
