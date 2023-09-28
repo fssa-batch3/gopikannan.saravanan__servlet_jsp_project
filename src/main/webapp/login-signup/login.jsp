@@ -6,8 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Login</title>
 <link rel="stylesheet"
-    href="<%= request.getContextPath() %>/assets/css/login.css">
-
+	href="<%=request.getContextPath()%>/assets/css/login-signup.css">
 </head>
 <body>
 	<h1>Login Page</h1>
@@ -30,9 +29,23 @@
 				}
 				%>
 
-				<input id="email" type="email" placeholder="Email"
-					autocomplete="off" name="email" /> <input type="password"
-					id="password" name="password" placeholder="Password" />
+				<input id="email" 
+				type="email" 
+				placeholder="Email"
+				autocomplete="off" 
+				name="email"
+          		pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                title="Enter the correct email"
+                value="${email}"
+                required /> 
+                
+				<input type="password"
+				id="password" 
+				name="password" 
+           		title="Please include at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character (@#$%^&+=!)"
+            	placeholder="Password"
+            	value="${password}"
+            	required />
 
 				<button type="submit">Login</button>
 

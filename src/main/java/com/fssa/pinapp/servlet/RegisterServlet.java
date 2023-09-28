@@ -44,8 +44,12 @@ public class RegisterServlet extends HttpServlet {
 			session.setAttribute("userId", user.getUserid());
 			response.sendRedirect("index.jsp");
 		} catch (ServiceException e) {
-			response.sendRedirect("./login-signup/register.jsp?errorMessage=Register User Failed : " + e.getMessage());
-			out.println("Registration failed : " + e.getMessage());
+			request.setAttribute("name", name);
+			request.setAttribute("mobileno", mobileno);
+			request.setAttribute("email", email);
+			request.setAttribute("password", password);
+			request.setAttribute("errorMessage" ,"Register User Failed : " + e.getMessage());
+			request.getRequestDispatcher("./login-signup/register.jsp").forward(request, response);
 		}
 
 	}

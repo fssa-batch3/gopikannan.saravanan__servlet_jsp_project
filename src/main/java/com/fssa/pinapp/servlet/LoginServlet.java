@@ -42,6 +42,8 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("index.jsp");
 
 		} catch (ServiceException e) {
+			request.setAttribute("email", email);
+			request.setAttribute("password",password);
 			request.setAttribute("errorMessage", "Login Failed : " + e.getMessage());
 			RequestDispatcher dispatcher = request.getRequestDispatcher("./login-signup/login.jsp");
 			dispatcher.forward(request, response);
