@@ -10,13 +10,10 @@
         axios.get(url)
             .then(function(response) {
               const   data = response.data;
-                console.log(data);
                 
                 const fundraiseDetails = data.fundraise;
-                console.log(fundraiseDetails);
                 
                const  userObj = fundraiseDetails[0].user;
-               console.log(userObj);
                
                toProcess(fundraiseDetails,userObj);
                 

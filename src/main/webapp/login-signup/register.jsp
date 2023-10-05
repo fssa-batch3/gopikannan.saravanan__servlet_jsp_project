@@ -7,6 +7,9 @@
 <title>PIN Register page</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/assets/css/login-signup.css">
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/universal.css">
+	
 </head>
 <body>
 	<div class="main">
@@ -62,6 +65,7 @@
 					required />
 
 				<button id="log-in" type="submit">Sign up</button>
+				<a href="./index.jsp">Go Back To Home</a>
 			</form>
 		</div>
 	</div>

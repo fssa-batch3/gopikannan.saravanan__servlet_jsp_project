@@ -7,14 +7,15 @@
 <title>Login</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/assets/css/login-signup.css">
+		<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/universal.css">
 </head>
 <body>
-	<h1>Login Page</h1>
 
 	<div class="h1">Welcome To PIN (People in Need)</div>
 	<div class="h1-txt">India's No 1 Crowdfunding Platform</div>
 
-	<div class="main" style="height: 580px">
+	<div class="main" style="height: 500px">
 		<div class="login">
 
 
@@ -46,7 +47,7 @@
             	placeholder="Password"
             	value="${password}"
             	required />
-
+            	<img id="passwordImage" src="../assets/images/hide.png" onclick="togglePassword()" alt="pwd">
 				<button type="submit">Login</button>
 
 				<br /> <a href="<%=request.getContextPath() %>/login-signup/register.jsp"
@@ -55,5 +56,20 @@
 			</form>
 		</div>
 	</div>
+	
+<script>
+function togglePassword() {
+    const passwordInput = document.getElementById('password');
+    const passwordImage = document.getElementById('passwordImage');
+
+    if (passwordInput.type === 'text') {
+      passwordInput.type = 'password';
+      passwordImage.src = '../assets/images/hide.png';
+    } else if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      passwordImage.src = '../assets/images/view.png';
+    }
+  }
+</script>
 </body>
 </html>

@@ -5,7 +5,6 @@
     	  let donateidurl = window.location.search;
           let urlParamsId = new URLSearchParams(donateidurl);
           let donate_Id = urlParamsId.get("donaterId");
-          console.log(donate_Id);
 
     		
     		const url = "/pinapp/ViewUserDonations"
@@ -13,9 +12,7 @@
     		axios.get(url)
     		.then(function(response){
     			 view = response.data.donate;
-    			 console.log(view);
     			 let donate_find = view.find((e) => e.donaterId == donate_Id);
-    			console.log(donate_find);
     			  toViewMyDonationReceipt(donate_find); 
     		})
     		 .catch(function(error) {

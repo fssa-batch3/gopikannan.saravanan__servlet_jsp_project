@@ -157,6 +157,7 @@ details summary {
   outline: none;
   font-size: 19px;
   font-weight: 500;
+  margin-bottom:15px;
 }
 .boxes {
   width: 60%;
@@ -177,8 +178,15 @@ details summary {
 }
 .text {
   color: #3f3a81;
+  margin-bottom:10px;
 }
 @media screen and (max-width: 1200px) {
+	.boxes {
+    width: 80%;}
+	details summary {
+	font-size:16px;
+	}
+	
   .side-head {
     text-align: center;
     padding-top: 20px;

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>All Fundraise Campaigns</title>
+<title>PIN</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/assets/css/universal.css">
 <link rel="stylesheet"

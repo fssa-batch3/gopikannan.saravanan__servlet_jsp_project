@@ -335,7 +335,7 @@ thead.appendChild(headerRow);
 const tbody = document.createElement('tbody');
 
 table.appendChild(thead);
-table.appendChild(tbody);
+table.prepend(tbody);
 
 tableContainer.appendChild(table);
 

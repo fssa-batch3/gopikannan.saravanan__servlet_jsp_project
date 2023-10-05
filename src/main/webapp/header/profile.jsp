@@ -49,13 +49,14 @@
                 <input type="password" id="password" name="password" value="${user.password} ">
                 
                 <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" value="${user.mobileno}">
+                <input type="tel" id="phone" name="phone" maxlength="10"  value="${user.mobileno}">
                 
-                <label for="accountNo">Account Number:</label>
-                <input type="number" id="accno" name="accno" value="${user.accNo}">    
+            	<label for="accountNo">Account Number:</label>
+				<input type="number" id="accno" name="accno" value="${user.accNo}" maxlength="12">
+
                 
                 <label for="accountIfsc">Account IFSC:</label>
-                <input type="text" id="ifc" name=ifsc value="${user.ifscNo}">
+                <input type="text" id="ifc" name=ifsc maxlength="12" value="${user.ifscNo}">
                 
             <!--     <label for="accountBankName">Account Bank Name:</label>
                 <input type="text" id="accname" name=accname >

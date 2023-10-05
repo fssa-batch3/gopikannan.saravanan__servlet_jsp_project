@@ -28,14 +28,11 @@ public class LoginServlet extends HttpServlet {
 		User user = new User();
 		user.setMail(email);
 		user.setPassword(password);
-
-
 		UserService userService = new UserService();
 
 		try {
 			userService.loginUser(user);
 			User user1 = userService.findUserByEmailService(user.getMail());
-			
 			HttpSession session = request.getSession();
 			session.setAttribute("loggedInEmail", email);
 			session.setAttribute("userId", user1.getUserid());

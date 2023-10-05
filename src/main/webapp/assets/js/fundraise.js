@@ -453,10 +453,11 @@ box1andbox2.append(supporterbox);
 
   
 } else {
-  let h3 = document.createElement("h3");
-  h3.innerText =
+  let info = document.createElement("h3");
+ info.setAttribute("id", "info");
+  info.innerText =
     "Kindly login if you don't have an account kindly signup and start your fundraise campaign";
-  document.querySelector(".container").append(h3);
+  document.querySelector(".container").append(info);
 }
 
 }
