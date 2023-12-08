@@ -40,7 +40,7 @@
     <!-- overall container starts -->
     <div class="maincontainer"></div>
 
-    <button onclick="download()" id="mydonations">My Donations</button>
+    <button onclick="download()" id="mydonations">Download</button>
 
     <!-- overall container ends -->
     <!-- Footer  -->

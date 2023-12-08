@@ -65,7 +65,7 @@
 					required />
 
 				<button id="log-in" type="submit">Sign up</button>
-				<a href="./index.jsp">Go Back To Home</a>
+				<a href="<%=request.getContextPath()%>/index.jsp">Go Back To Home</a>
 			</form>
 		</div>
 	</div>

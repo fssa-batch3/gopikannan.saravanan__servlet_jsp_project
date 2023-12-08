@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -111,7 +110,7 @@ public class TransactionServlet extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+"/donate/SuccessfullDonation.jsp");}
 		}
 		catch (ServiceException e) {
-			response.sendRedirect("../fundraiser/directbanktransfer.jsp?errorMessage=View Failed: " + e.getMessage());
+			response.sendRedirect(request.getContextPath()+"/fundraiser/directbanktransfer.jsp?errorMessage=View Failed: " + e.getMessage());
 		}
 
 	}

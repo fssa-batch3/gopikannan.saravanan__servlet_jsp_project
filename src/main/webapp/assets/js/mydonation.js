@@ -245,6 +245,7 @@ if (mail != null) {
 } else {
   let txt;
   txt = document.createElement("h3");
+  txt.setAttribute("id","info");
   txt.innerText =
     "You have not contributed to any fundraise campaign kindly login and start your donations";
   document.querySelector(".overallcontainer").append(txt);

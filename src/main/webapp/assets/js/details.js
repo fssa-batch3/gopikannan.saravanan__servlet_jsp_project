@@ -256,7 +256,7 @@ upibox.append(qrimg);
 
 let imageqr;
 imageqr = document.createElement("img");
-imageqr.setAttribute("src", "../assets/images/qr1.jpeg");
+imageqr.setAttribute("src", "../assets/images/qr.jpg");
 imageqr.setAttribute("alt", "Qr");
 imageqr.setAttribute("id", "qr");
 qrimg.append(imageqr);

@@ -32,7 +32,7 @@
 
     <div class="paymentpage">Payment Page</div>
 
-    <form id = "form"class="container" action = "../fundraiser/directbanktransfer.jsp">
+    <form id = "form"class="container" action = "<%=request.getContextPath()%>/fundraiser/directbanktransfer.jsp">
       <div class="amount">
         <label> Your Contribution :</label>&nbsp;&nbsp;
         <input type="hidden" name="fundraiseid" id="fundraiseid" value="<%= request.getParameter("product_id")%>">

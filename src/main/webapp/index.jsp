@@ -57,14 +57,7 @@
 					the bank account associated with your fundraising page. Raising
 					money has never been easier.</p>
 			</details>
-			<!-- <details>
-				<summary>Is it safe?</summary>
-				<p class="text">Your Pin fundraiser features and donate features
-					the very best in secure payment encryption technology. Not only are
-					your donors' online payments safe, your money is stored securely
-					until you're ready to request a withdrawal via electronic bank
-					transfer.</p>
-			</details> -->
+			
 			<details>
 				<summary>I have more questions, who do I write to?</summary>
 				<p class="text">Redirect to the contact page and fill the form

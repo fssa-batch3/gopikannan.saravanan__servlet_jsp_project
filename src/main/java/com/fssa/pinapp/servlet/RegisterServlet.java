@@ -1,7 +1,6 @@
 package com.fssa.pinapp.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +22,6 @@ public class RegisterServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
 		String name = request.getParameter("username");
 
 		String email = request.getParameter("email");
@@ -39,9 +37,10 @@ public class RegisterServlet extends HttpServlet {
 		UserService userservice = new UserService();
 		try {
 			userservice.registerUser(user);
+			User user1 = userservice.findUserByEmailService(user.getMail());
 			HttpSession session = request.getSession();
 			session.setAttribute("loggedInEmail", email);
-			session.setAttribute("userId", user.getUserid());
+			session.setAttribute("userId", user1.getUserid());
 			response.sendRedirect("index.jsp");
 		} catch (ServiceException e) {
 			request.setAttribute("name", name);

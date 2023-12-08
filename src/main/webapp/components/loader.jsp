@@ -84,7 +84,7 @@
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  var loaderWrapper = document.querySelector(".loader-wrapper");
+  let loaderWrapper = document.querySelector(".loader-wrapper");
 
   loaderWrapper.style.opacity = "1";
 
